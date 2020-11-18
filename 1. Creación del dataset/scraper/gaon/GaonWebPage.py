@@ -1,7 +1,7 @@
 import urllib.parse
 
-from scraper.gaon.GaonParser import GaonParser
-from scraper.gaon.GaonStructuredData import GaonStructuredData
+from gaon.GaonParser import GaonParser
+from gaon.GaonStructuredData import GaonStructuredData
 
 
 class GaonWebPage:

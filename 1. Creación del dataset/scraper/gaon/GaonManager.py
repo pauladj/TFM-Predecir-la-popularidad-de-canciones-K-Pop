@@ -1,7 +1,7 @@
 import time
 
-from scraper.gaon.GaonStructuredData import GaonStructuredData
-from scraper.gaon.GaonWebPage import GaonWebPage
+from gaon.GaonStructuredData import GaonStructuredData
+from gaon.GaonWebPage import GaonWebPage
 from utils import PageRequester
 
 
@@ -10,7 +10,6 @@ class GaonManager:
     def save_songs(self, output, until=2014):
         """
         Scrape and save songs
-        :return:
         """
         try:
             # Get html

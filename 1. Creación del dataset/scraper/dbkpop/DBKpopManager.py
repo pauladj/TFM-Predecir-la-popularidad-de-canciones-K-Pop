@@ -1,4 +1,4 @@
-from scraper.dbkpop.DBKpopPage import DBKpopPage
+from dbkpop.DBKpopPage import DBKpopPage
 from utils import PageRequester
 
 

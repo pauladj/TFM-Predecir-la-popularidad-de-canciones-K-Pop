@@ -11,9 +11,8 @@ class StructuredData:
 
     def save_as(self, file):
         """
-
+        Save dataframe to csv
         :param file:
-        :return:
         """
         if self.data is not None:
             self.data.to_csv(file, index=False)

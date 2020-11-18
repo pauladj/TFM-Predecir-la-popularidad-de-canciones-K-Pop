@@ -1,6 +1,6 @@
 import pandas as pd
 
-from scraper.dbkpop.StructuredData import StructuredData
+from dbkpop.StructuredData import StructuredData
 
 
 class GaonStructuredData(StructuredData):

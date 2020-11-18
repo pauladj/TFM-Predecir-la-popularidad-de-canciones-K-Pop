@@ -1,5 +1,5 @@
-from scraper.dbkpop.DBKpopParser import DBKpopParser
-from scraper.dbkpop.StructuredData import StructuredData
+from dbkpop.DBKpopParser import DBKpopParser
+from dbkpop.StructuredData import StructuredData
 
 
 class DBKpopPage():

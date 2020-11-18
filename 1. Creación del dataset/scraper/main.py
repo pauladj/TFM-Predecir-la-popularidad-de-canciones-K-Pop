@@ -2,8 +2,8 @@ import os
 
 import click
 
-from scraper.dbkpop.DBKpopManager import DBKpopManager
-from scraper.gaon.GaonManager import GaonManager
+from dbkpop.DBKpopManager import DBKpopManager
+from gaon.GaonManager import GaonManager
 
 
 @click.group()
@@ -18,11 +18,9 @@ def scraper():
 def gaon(until, output):
     """
     Get and save dataset with gaon monthly songs
-    :param until:
-    :return:
     """
     print(f'Getting the chart songs until {until}')
-    output = f"{output}/gaon/gaon_monthly_chart_until_{until}.csv"
+    output = f"{output}/gaon_monthly_chart_until_{until}.csv"
 
     until = int(until)
     gaon_manager = GaonManager()
@@ -34,25 +32,19 @@ def gaon(until, output):
     os.path.realpath(__file__)), "data"), help='Output folder')
 def dbkpop(output):
     """
-    Get and save tables
-    :param until:
-    :return:
+    Get and save DBKpop tables
     """
-    print('Parsing the dbkpop data')
-    dbkpop_manager = DBKpopManager(data_folder=f"{output}/dbkpop")
-    print("Started parsing Kpop boybands")
+    print('Scraping and parsing the dbkpop data')
+    dbkpop_manager = DBKpopManager(data_folder=output)
+    print("Started scraping and parsing Kpop boybands")
     dbkpop_manager.save_k_pop_table("https://dbkpop.com/db/k-pop-boybands",
                                     "all_kpop_boybands.csv")
-    print("Started parsing Kpop girlgroups")
+    print("Started scraping and parsing Kpop girlgroups")
     dbkpop_manager.save_k_pop_table("https://dbkpop.com/db/k-pop-girlgroups",
                                     "all_k_pop_girlgroups.csv")
-    print("Started parsing Kpop idols")
+    print("Started scraping and parsing Kpop idols")
     dbkpop_manager.save_k_pop_table("https://dbkpop.com/db/all-k-pop-idols",
                                     "all_k_pop_idols.csv")
-    print("Started parsing Kpop music videos")
-    dbkpop_manager.save_k_pop_table(
-        "http://127.0.0.1/all_k_pop_music_videos.html",
-        "all_k_pop_music_videos.csv")
 
 
 scraper.add_command(gaon)
