@@ -2,6 +2,7 @@
 
 Python 3.7.6
 
+Los scripts para recopilar los datos de Gaon funcionan de la siguiente manera:
 ```
 Usage: python main.py gaon [OPTIONS]
 
