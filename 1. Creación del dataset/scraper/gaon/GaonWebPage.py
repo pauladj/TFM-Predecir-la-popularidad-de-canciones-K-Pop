@@ -12,11 +12,17 @@ class GaonWebPage:
         self.songs = GaonStructuredData()
 
     def get_all_monthly_links_text(self, until):
+        """
+        Get chart links until the specified year
+        """
         texts = self.parser.get_monthly_links_text()
         texts = [t for t in texts if int(t[:4]) > int(until)]
         return texts
 
     def build_link_params(self):
+        """
+        Build the chart link parameters
+        """
         year = self.year_month[:4]
         month = self.year_month[4:]
         params = {"targetTime": month, "hitYear": year, "termGbn": "month"}
@@ -24,6 +30,9 @@ class GaonWebPage:
         return params
 
     def get_songs(self):
+        """
+        Get the songs and save them on a dataframe
+        """
         songs, distributor = self.parser.get_songs()
         quantity = int(len(songs) * 0.25)  # popular is 25% of the top,
         # unpopular is 25% of the bottom
@@ -47,6 +56,8 @@ class GaonWebPage:
         songs_info['num_times_top_5'] = [1] * 5 + [0] * (len(songs) - 5)
         songs_info['num_times_top_1'] = [1] + [0] * (len(songs) - 1)
         songs_info['is_popular'] = ['1'] * quantity + ['0'] * quantity
+
+        # initialize dataframe
         self.songs.initialize(songs_info)
         return self.songs
 

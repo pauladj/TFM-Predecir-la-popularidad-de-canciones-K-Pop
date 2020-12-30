@@ -7,6 +7,10 @@ class StructuredData:
         self.data = data
 
     def initialize(self, value_dict):
+        """
+        Initialize the dataset from a dictionary
+        :param value_dict: dictionary with the data
+        """
         self.data = pd.DataFrame(value_dict, columns=value_dict.keys())
 
     def save_as(self, file):

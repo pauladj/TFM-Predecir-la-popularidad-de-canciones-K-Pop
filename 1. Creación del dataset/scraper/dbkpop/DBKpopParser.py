@@ -4,6 +4,9 @@ class DBKpopParser():
         self.html = html
 
     def get_table_header_strings(self):
+        """
+        Get table header texts
+        """
         header_texts = self.html.find('table').find_all('th')
         seen = set()
         header_texts = [x.text for x in header_texts if not (x.text in seen or
@@ -13,9 +16,15 @@ class DBKpopParser():
         return header_texts
 
     def get_table_rows(self):
+        """
+        Get all rows of the table
+        """
         return self.html.find('tbody').find_all('tr')
 
     def get_data_from_row(self, row):
+        """
+        Get all row data
+        """
         tds = row.find_all('td')
         tds = [x.text.strip() for x in tds]
         return tds

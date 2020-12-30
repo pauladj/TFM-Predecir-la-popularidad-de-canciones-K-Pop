@@ -6,7 +6,11 @@ from dbkpop.StructuredData import StructuredData
 class GaonStructuredData(StructuredData):
 
     def concatenate(self, data_aux):
+        """
+        Concatenate two dataframes
+        """
         if self.data is not None:
+            # if there are two dataframes concatenate them
             production_dictionary = pd.concat([self.data[['title', 'singer',
                                                           'producer',
                                                           'distributor']],
@@ -17,9 +21,11 @@ class GaonStructuredData(StructuredData):
             self.data.drop(['producer', 'distributor'],
                            axis=1, inplace=True)
         else:
+            # if there's just one don't do anything
             production_dictionary = data_aux.data[['title', 'singer',
                                                    'producer', 'distributor']]
 
+        # Drop rows with the same title and singer
         production_dictionary = production_dictionary.drop_duplicates(subset=[
             'title', 'singer'], keep='first')
         data_aux.data.drop(['producer', 'distributor'],
@@ -27,6 +33,8 @@ class GaonStructuredData(StructuredData):
         self.data = pd.concat([self.data, data_aux.data])
         self.data = pd.merge(self.data, production_dictionary, how='inner')
 
+        # Do some operations to calculate the new column values after
+        # joining two datasets
         self.data = self.data.groupby(['title', 'singer', 'album',
                                        'producer', 'distributor']).agg(
             {

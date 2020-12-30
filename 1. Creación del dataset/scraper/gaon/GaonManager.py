@@ -20,6 +20,8 @@ class GaonManager:
             g = GaonWebPage(html)
             # get all months
             year_months = g.get_all_monthly_links_text(until=until)
+            if len(year_monts) == 0:
+                print("No songs found, try changing the limit year.")
             year_months.reverse()
             data = GaonStructuredData()
             remaining_time = None
@@ -40,9 +42,10 @@ class GaonManager:
                 data.concatenate(data_month)
 
                 if not remaining_time:
+                    # Calculate the remaining time
                     end = time.time()
                     remaining_time = (end - start) * (
-                                len(year_months) - 1) / 60
+                            len(year_months) - 1) / 60
                     print(f"Remaining time: {remaining_time} minutes")
             data.data.loc[data.data.external_factors > 1, 'external_factors'] \
                 = 1
