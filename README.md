@@ -7,9 +7,11 @@
     <img src="https://img.shields.io/badge/Jupyter Notebook--orange?logo=jupyter" />
 </div>
 
+<h4 align="center">Trabajo de Fin de Master</h4>
+
 ### Descripción
 
-Trabajo de Fin de Master. El análisis de datos junto con la inteligencia artificial permiten resolver preguntas y problemas interesantes que se plantean. Hoy en día, existen canciones que son populares y otras muchas que son poco conocidas. Por ejemplo, la revista Billboard publica cada semana una lista con las canciones más escuchadas utilizando aspectos como la cantidad de ventas y reproducciones. Por otro lado, de forma similar en el mercado de música coreana (también conocido como K-pop) existen artistas de los que se conoce su música, y otros que no son tan famosos. Hay grupos musicales que triunfan y otros que desaparecen. De esta manera, sería interesante conocer porque una canción es popular cuando otra no lo es dejando campos como el marketing de lado y centrándose únicamente en las mismas canciones. Este trabajo intenta explorar las características que hacen que una canción sea popular en el mercado coreano, además de intentar predecir si una canción será popular. 
+El análisis de datos junto con la inteligencia artificial permiten resolver preguntas y problemas interesantes que se plantean. Hoy en día, existen canciones que son populares y otras muchas que son poco conocidas. Por ejemplo, la revista Billboard publica cada semana una lista con las canciones más escuchadas utilizando aspectos como la cantidad de ventas y reproducciones. Por otro lado, de forma similar en el mercado de música coreana (también conocido como K-pop) existen artistas de los que se conoce su música, y otros que no son tan famosos. Hay grupos musicales que triunfan y otros que desaparecen. De esta manera, sería interesante conocer porque una canción es popular cuando otra no lo es dejando campos como el marketing de lado y centrándose únicamente en las mismas canciones. Este trabajo intenta explorar las características que hacen que una canción sea popular en el mercado coreano, además de intentar predecir si una canción será popular. 
 
 Este trabajo es un problema de clasificación supervisada y forma parte del campo de estudio "Hit Song Science". Se han utilizado los datos de la lista de éxitos (*music chart*) "[Gaon](http://www.gaonchart.co.kr/main/section/chart/online.gaon?nationGbn=T&serviceGbn=ALL)" para entrenar los diferentes modelos.
 
