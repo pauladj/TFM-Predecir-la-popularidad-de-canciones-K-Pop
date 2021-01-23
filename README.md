@@ -1,4 +1,3 @@
-# TFM
 <div align="center"><img src="img/kpop.png" /></div>
 
 <h3 align="center">Predict if a K-Pop song will be a hit</h3>
@@ -16,7 +15,7 @@ Este trabajo es un problema de clasificación supervisada y forma parte del camp
 
 [Documentación pdf](https://github.com/pauladj/tfm-predict-kpop-songs-hits/blob/master/documentaci%C3%B3n.pdf)
 
-[Presentación pdf](https://github.com/pauladj/tfm-predict-kpop-songs-hits/blob/master/Presentaci%C3%B3n.pdf)
+[Presentación pdf](https://github.com/pauladj/tfm-predict-kpop-songs-hits/blob/master/presentaci%C3%B3n.pdf)
 
 
 
